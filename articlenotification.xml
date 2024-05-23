@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="system" method="upgrade">
+    <name>PLG_SYSTEM_ARTICLENOTIFICATION</name>
+    <description>PLG_SYSTEM_ARTICLENOTIFICATION_XML_DESCRIPTION</description>
+    <version>1.0.0</version>
+    <creationDate>May 2024</creationDate>
+    <author>Jeroen Moolenschot</author>
+    <authorEmail>info@joomill-extensions.com</authorEmail>
+    <authorUrl>https://www.joomill-extensions.com</authorUrl>
+    <license>GNU/GPL version 3 or later</license>
+    <copyright>Copyright (C) 2024 Joomill. All rights reserved.</copyright>
+    <namespace path="src">Joomill\Plugin\System\ArticleNotification</namespace>
+
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files>  
+        <folder>language</folder>
+        <folder>services</folder>
+        <folder>sql</folder>
+        <folder plugin="articlenotification">src</folder>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="categories"
+                        type="category"
+                        extension="com_content"
+                        label="PLG_SYSTEM_ARTICLENOTIFICATION_SELECT_CATEGORY_LBL"
+                        description="PLG_SYSTEM_ARTICLENOTIFICATION_SELECT_CATEGORY_DESC"
+                        multiple="true"
+                />
+
+                <field
+                        name="email"
+                        type="text"
+                        label="PLG_SYSTEM_ARTICLENOTIFICATION_EMAIL_LBL"
+                        description="PLG_SYSTEM_ARTICLENOTIFICATION_EMAIL_DESC"
+                        default=""
+                />
+
+                <field
+                        name="language_override"
+                        type="language"
+                        label="PLG_SYSTEM_ARTICLENOTIFICATION_LANGUAGE_OVERRIDE_LBL"
+                        description="PLG_SYSTEM_ARTICLENOTIFICATION_LANGUAGE_OVERRIDE_DESC"
+                        default=""
+                        client="administrator"
+                >
+                    <option value="">PLG_SYSTEM_ARTICLENOTIFICATION_LANGUAGE_OVERRIDE_NONE</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
