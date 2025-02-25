@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  package: articlenotification
+  ~  copyright: Copyright (c) 2025. Jeroen Moolenschot | Joomill
+  ~  license: GNU General Public License version 2 or later
+  ~  link: https://www.joomill-extensions.com
+  -->
+
 <extension version="4.0" type="plugin" group="system" method="upgrade">
     <name>PLG_SYSTEM_ARTICLENOTIFICATION</name>
     <description>PLG_SYSTEM_ARTICLENOTIFICATION_XML_DESCRIPTION</description>
@@ -22,7 +29,7 @@
         </sql>
     </uninstall>
 
-    <files>  
+    <files>
         <folder>language</folder>
         <folder>services</folder>
         <folder>sql</folder>
