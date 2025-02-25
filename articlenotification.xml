@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~  package: articlenotification
-  ~  copyright: Copyright (c) 2025. Jeroen Moolenschot | Joomill
-  ~  license: GNU General Public License version 2 or later
-  ~  link: https://www.joomill-extensions.com
-  -->
-
 <extension version="4.0" type="plugin" group="system" method="upgrade">
     <name>PLG_SYSTEM_ARTICLENOTIFICATION</name>
     <description>PLG_SYSTEM_ARTICLENOTIFICATION_XML_DESCRIPTION</description>
-    <version>1.0.0</version>
-    <creationDate>May 2024</creationDate>
+    <version>1.1.0</version>
+    <creationDate>February 2025</creationDate>
     <author>Jeroen Moolenschot</author>
     <authorEmail>info@joomill-extensions.com</authorEmail>
     <authorUrl>https://www.joomill-extensions.com</authorUrl>
     <license>GNU/GPL version 3 or later</license>
-    <copyright>Copyright (C) 2024 Joomill. All rights reserved.</copyright>
+    <copyright>Copyright (C) 2025 Joomill. All rights reserved.</copyright>
     <namespace path="src">Joomill\Plugin\System\ArticleNotification</namespace>
 
     <install> <!-- Runs on install -->
