@@ -81,8 +81,8 @@ final class ArticleNotification extends CMSPlugin
         }
 
         // Get Author name
-        $user = Factory::getUser($article->created_by);
-        $article->author = $user->get('name');
+        $user = Factory::getApplication()->getIdentity($article->created_by);
+        $article->author = $user->name;
 
         // Get Article text
         $introText = $article->introtext;
