@@ -65,10 +65,14 @@ final class ArticleNotification extends CMSPlugin
 			return false;
 		}
 
-		// Get Category name
-		$db = Factory::getDbo();
-		$db->setQuery("SELECT cat.title FROM #__categories cat WHERE cat.id='$article->catid'");
-		$article->category = $db->loadResult();
+        // Get Category name
+        $db = $this->getDatabase();
+        $query = $db->getQuery(true)
+            ->select($db->quoteName('title'))
+            ->from($db->quoteName('#__categories'))
+            ->where($db->quoteName('id') . ' = ' . $db->quote($article->catid));
+        $db->setQuery($query);
+        $article->category = $db->loadResult();
 
 		// Check if Category needs to send a Notification
 		if ($this->params->get('categories')) {
